@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Historia zakupów</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/History.css}" href="../../static/CSS/History.css">
+</head>
+<body>
+    <header th:replace="~{fragments/Standard_header :: header}">
+        <h1>Aledrogo</h1>
+    </header>
+    <main>
+        <section th:each="product : ${productsList}">
+            <h2 th:text="${product.getName()}"></h2>
+            <p th:text="'Kategoria: ' + ${product.getCategory().getCategoryName()}"></p>
+            <p th:text="'Cena: ' + ${product.getPrice()}"></p>
+            <p th:text="'Opis: ' + ${product.getDescription()}"></p>
+        </section>
+    </main>
+    <footer th:replace="~{fragments/Standard_footer :: footer}">
+
+    </footer>
+</body>
+</html>

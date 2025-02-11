@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj produkt</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/AddProduct.css}" href="/../static/CSS/AddProduct.css">
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+<main>
+    <h2>Dodaj nowy produkt</h2>
+
+
+    <form action="/Seller/Sell/NewProduct" method="post" enctype="multipart/form-data">
+        <select name="category">
+            <option>Wybierz kategorie</option>
+            <option th:each="category : ${allCategories}" th:name="${category.getId()}" th:value="${category.getId()}" th:text="${category.getCategoryName()}"></option>
+        </select>
+        <input type="text" name="name" placeholder="Nazwa">
+        <input type="text" name="description" placeholder="Opis">
+        <input type="number" name="price" placeholder="cena">
+        <div>
+            <label for="image">Wybierz obraz:</label>
+            <input type="file" name="image" id="image">
+        </div>
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+        <input type="submit" value="Prześlij">
+    </form>
+</main>
+
+<footer th:replace="~{fragments/Standard_footer :: footer}">
+
+</footer>
+</body>
+</html>

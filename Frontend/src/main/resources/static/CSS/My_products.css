@@ -1,0 +1,26 @@
+img {
+    max-width: 10em;
+    max-height: 10em;
+}
+main li, h3, p {
+    background-color: #222222;
+    color: white;
+}
+main ul {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+main li {
+    border-radius: 1em;
+    padding: 0.5em;
+    max-width: 30em;
+    max-height: 30em;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

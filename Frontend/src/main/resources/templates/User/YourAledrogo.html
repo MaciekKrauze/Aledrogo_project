@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/YourAledrogo.css}" href="../../static/CSS/YourAledrogo.css">
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+<main>
+    <ul>
+        <li><a href="/User/YourAledrogo/History">Twoja historia</a></li>
+        <li><a href="/User/YourAledrogo/Account">Konto</a></li>
+    </ul>
+</main>
+
+<footer th:replace="~{fragments/Standard_footer :: footer}">
+
+</footer>
+</body>
+</html>

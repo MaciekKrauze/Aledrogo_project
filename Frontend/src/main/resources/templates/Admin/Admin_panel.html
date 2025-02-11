@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/AdminPanel.css}" href="../../static/CSS/AdminPanel.css">
+    <style>
+        .more-content { display: none; margin-top: 10px; }
+        .toggle-btn { color: #007bff; cursor: pointer; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+<main>
+    <form method="post" action="/admin/adminPanel">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <select name="category">
+            <option value="">Wybierz kategorię</option>
+            <option value="users">Użytkownicy</option>
+            <option value="products">Produkty</option>
+            <option value="songs">Piosenki</option>
+        </select>
+        <button type="submit">Zatwierdź</button>
+    </form>
+
+
+    <div th:if="${users != null}">
+        <h2>Użytkownicy</h2>
+
+        <form method="post" action="/admin/user/add">
+            <label>Dodaj użytkownika</label>
+            <span class="toggle-btn" onclick="toggleContent(this)">Zobacz więcej</span>
+            <div class="more-content">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                <label>Email:</label>
+                <input type="text" name="email">
+                <label>Imię:</label>
+                <input type="text" name="firstName">
+                <label>Nazwisko:</label>
+                <input type="text" name="lastName">
+                <label>Balans:</label>
+                <input type="number" name="balance">
+            </div>
+        </form>
+        <div th:each="user : ${users}">
+            <h3>ID: <span th:text="${user.id}"></span> | Email: <span th:text="${user.email}"></span></h3>
+            <span class="toggle-btn" onclick="toggleContent(this)">Zobacz więcej</span>
+            <div class="more-content">
+                <form method="post" action="/admin/user/update">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <input type="hidden" th:name="id" th:value="${user.id}"/>
+
+                    <label>Imię: <span th:text="${user.firstName}"></span></label>
+                    <input type="text" name="firstName" th:value="${user.firstName}">
+
+                    <label>Nazwisko: <span th:text="${user.lastName}"></span></label>
+                    <input type="text" name="lastName" th:value="${user.lastName}">
+
+                    <label>Balans: <span th:text="${user.balance}"></span></label>
+                    <input type="number" name="balance" th:value="${user.balance}">
+                </form>
+
+                <form method="delete" action="/admin/user/delete">
+                    <input type="hidden" th:name="id" th:value="${user.id}"/>
+                    <input type="submit" value="Delete">
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div th:if="${products != null}">
+        <h2>Produkty</h2>
+        <!-- Add similar structure for products -->
+    </div>
+
+    <div th:if="${songs != null}">
+        <h2>Piosenki</h2>
+
+        <form method="post" action="/admin/song/add">
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+            <label>Dodaj piosenkę</label>
+            <span class="toggle-btn" onclick="toggleContent(this)">Zobacz więcej</span>
+            <div class="more-content">
+                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+                <label>Tytuł:</label>
+                <input type="text" name="name" th:value="${name}" />
+<!--                <div th:if="*{#fields.hasErrors('name')}" th:errors="${name}"></div>-->
+
+                <label>Nazwa albumu:</label>
+                <input type="text" name="album" th:value="${album}" />
+
+                <label>Imię i nazwisko artysty:</label>
+                <input type="text" name="artist" th:value="${artist}" />
+<!--                <div th:if="${#fields.hasErrors('artist')}" th:errors="${artist}"></div>-->
+
+                <label>Data wydania:</label>
+                <input type="text" name="releaseDate" placeholder="dd/mm/yyyy" th:value="${releaseDate}" />
+<!--                <div th:if="${#fields.hasErrors('releaseDate')}" th:errors="${releaseDate}"></div>-->
+
+                <input type="submit" value="Dodaj">
+            </div>
+        </form>
+
+        <div th:each="song: ${songs}" class="test">
+            <h3>ID: <span th:text="${song.id}"></span> | Name: <span th:text="${song.name}"></span></h3>
+            <h3 th:text="${song.name}"></h3>
+            <span class="toggle-btn" onclick="toggleContent(this)">Zobacz więcej</span>
+            <div class="more-content">
+                <form method="post" action="/admin/song/update">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <input type="hidden" name="id" th:value="${song.id}">
+                    <input type="hidden" name="_method" value="PUT"/>
+                    <label>Tytuł: <span th:text="${song.name}"></span></label>
+                    <input type="text" name="name">
+                    <label>Album: <span th:text="${song.album}"></span></label>
+                    <input type="text" name="album">
+                    <label>Artysta: <span th:text="${song.artist}"></span></label>
+                    <input type="text" name="artist">
+                    <label>Data Wydania: <span th:text="${song.releaseDate}"></span></label>
+                    <input type="text" name="releaseDate">
+                    <input type="submit">
+                </form>
+            </div>
+            <div>
+                <form method="post" action="/admin/delete/song">
+                    <input type="hidden" name="id" th:value="${song.id}">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                    <input type="hidden" name="_method" value="DELETE"/>
+                    <input type="submit" value="Usuń">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            const btn = element;
+
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                btn.textContent = 'Zobacz mniej';
+            } else {
+                content.style.display = 'none';
+                btn.textContent = 'Zobacz więcej';
+            }
+        }
+    </script>
+</main>
+<footer th:replace="~{fragments/Standard_footer :: footer}"></footer>
+</body>
+</html>

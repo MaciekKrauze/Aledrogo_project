@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="/../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/My_Products.css}" href="/../static/CSS/My_products.css">
+</head>
+<body>
+    <header th:replace="~{fragments/Standard_header :: header}">
+        <h1>Aledrogo</h1>
+    </header>
+    <main>
+
+        <ul>
+            <li th:each="product : ${products}">
+                <h3 th:text="${product.getName()}"></h3>
+                <p th:text="'Kategoria: ' + ${product.getCategory().getCategoryName()}"></p>
+                <p th:text="'Cena: ' + ${product.getPrice()} + ' zł'"></p>
+                <p th:text="${product.getDescription()}"></p>
+                <img th:src="@{'/images/' + ${product.imageId}}" alt="Obraz produktu">
+            </li>
+        </ul>
+
+
+    </main>
+    <footer th:replace="~{fragments/Standard_footer :: footer}">
+
+    </footer>
+</body>
+</html>
+

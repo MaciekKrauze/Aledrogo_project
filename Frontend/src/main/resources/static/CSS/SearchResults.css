@@ -1,0 +1,103 @@
+main ul {
+    background-color: #222222;
+    margin: 1em;
+}
+
+main {
+    margin: 5em;
+}
+input[type=submit] {
+     color:white;
+     background-color: #ff5a00;
+     padding: 0.25em;
+     border-radius: 0.25em;
+     margin: 0.25em;
+     min-width: 5em;
+ }
+.login-form {
+    gap: 1em;
+    margin: 2em auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+}
+
+.login-form input[type="text"]{
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.login-form select{
+    color: white;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #df5001;
+}
+input[type="text"]:not(:placeholder-shown) {
+    background-color: #222222;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+main section {
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+}
+main h2{
+    color: white;
+    background-color: #222222;
+}
+main p{
+    color: white;
+    background-color: #222222;
+}
+main ul {
+    padding: 1em;
+    background-color: #222222;
+    min-height: 20em;
+    min-width: 20em;
+    max-width: 20em;
+    max-height: 20em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2em;
+}
+
+main ul li {
+    background-color: #222222;
+    list-style-type: none;
+    padding: 0.5em;
+    display: flex;
+}
+main ul li img {
+    max-width: 10em;
+    max-height: 10em;
+    background-color: #222222;
+}
+main form  {
+    display: flex;
+    background-color: #222222;
+    flex-direction: column;
+    align-items: center;
+}
+main label {
+    background-color: #222222;
+    color: white;
+    margin: 0.5em;
+}
+form>div{
+    background-color: #222222;
+}
+main>div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}

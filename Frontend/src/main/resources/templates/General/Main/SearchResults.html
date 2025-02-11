@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Search Products</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/SearchResults.css}" href="/CSS/SearchResults.css">
+</head>
+<body>
+<header>
+    <section>
+    <h1><a href="/">Aledrogo</a></h1>
+    <form method="get" action="/search" class="login-form">
+        <input type="text" name="name" placeholder="Nazwa produktu" />
+        <select name="categoryId">
+            <option value="">Wszystkie kategorie</option>
+            <option th:each="category : ${categories}"
+                    th:value="${category.getId()}"
+                    th:text="${category.getCategoryName()}">
+            </option>
+        </select>
+        <input type="submit">Search</input>
+    </form>
+    </section>
+    <ul th:if="${userId != null}">
+        <li><a href="/Delivery">status wysyłki</a></li>
+        <li><a href="/Favorite">ulubione</a></li>
+        <li><a href="/Basket">koszyk</a></li>
+        <li><a href="../../YourAledrogo">Moje aledrogo</a></li>
+        <form action="/logOut" method="post">
+            <input type="submit" value="wyloguj">
+        </form>
+    </ul>
+    <div th:if="${userId != null}">
+        <p><a href="login">Zaloguj się</a></p>
+        <p><a href="register_as_client">Zarejestruj się</a></p>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2>Wyniki</h2>
+
+        <div th:if="${userGuess == true}">
+            <p>Zostanie przyznana zniżka 10%</p>
+        </div>
+    </section>
+<div>
+    <ul th:each="product : ${products}">
+        <li>
+            <form method="post" action="/search">
+                <div>
+                    <input type="hidden" name="productId" th:value="${product.getId()}"/>
+                    <label th:text="${product.getName()}"></label>
+                    <label th:text="${product.getPrice()}"></label>
+                    <label th:text="${product.getCategory().getCategoryName()}"></label>
+                </div>
+                <label> <img th:src="@{'/images/' + ${product.imageId}}" alt="Obraz produktu"></label>
+                <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                <input type="submit" value="Kup">
+            </form>
+        </li>
+    </ul>
+
+    <p th:if="${products.size() == 0}">Nie ma takich produktów.</p>
+</div>
+
+
+</main>
+
+<footer th:replace="~{fragments/Standard_footer :: footer}">
+    <section>
+        <h2>Aledrogo</h2>
+        <ul>
+            <li><a href=/General/RandomSite>O nas</a></li>
+            <li><a href=/General/RandomSite></a></li>
+            <li><a href=/General/RandomSite></a></li>
+            <li><a href=/General/RandomSite></a></li>
+        </ul>
+    </section>
+</footer>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+h2, h3 {
+    color: #ffffff;
+    background-color: #222222;
+}
+
+input[type=text] {
+    background-color: #222222;
+    color: #ffffff;
+}
+main {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+span {
+    text-decoration: none;
+    background-color: #222222;
+    color: #ff5a00;
+}
+label, button, select, option, form {
+    background-color: #222222;
+    color: #ffffff;
+}
+div, form {
+    margin: 1em;
+    padding: 1em;
+}
+.test {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

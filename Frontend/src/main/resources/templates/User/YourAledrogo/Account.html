@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/Account.css}" href="../../../static/CSS/Account.css">
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+
+<main>
+    <section>
+        <div>
+            <h2>Bilans</h2>
+            <p th:text="${balance} + ' zł'"></p>
+            <form action="/User/YourAledrogo/Account/AddBalance" method="post">
+                <label>Dodaj środki</label>
+                <input type="number" name="balance">
+                <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                <input type="submit">
+            </form>
+        </div>
+    </section>
+
+    <section>
+        <h2>Adres</h2>
+        <form method="post" action="/User/Account/AddAddress">
+            <div>
+                <label>Miasto  <p th:text="' Obecnie: ' + ${adress.getCity()} "></p></label>
+                <input type="text" name="city">
+            </div>
+            <div>
+                <label>Państwo <p th:text="' Obecnie: ' + ${adress.getCountry()} "></p></label>
+                <input type="text" name="country">
+            </div>
+            <div>
+                <label>Województwo<p th:text="' Obecnie: ' + ${adress.getState()} "></p></label>
+                <input type="text" name="state">
+            </div>
+            <div>
+                <label>Ulica<p th:text="' Obecnie: ' + ${adress.getStreetName()} "></p></label>
+                <input type="text" name="streetName">
+            </div>
+            <div>
+                <label>Kod pocztowy<p th:text="' Obecnie: ' + ${adress.getPostalCode()} "></p></label>
+                <input type="text" name="postalCode">
+            </div>
+            <div>
+                <label>Numer ulicy<p th:text="' Obecnie: ' + ${adress.getStreetNumber()} "></p></label>
+                <input type="number" name="streetNumber">
+            </div>
+            <div>
+                <label>Numer apartamentu<p th:text="' Obecnie: ' + ${adress.getApartmentNumber()} "></p></label>
+                <input type="number" name="apartmentNumber">
+            </div>
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+            <input type="submit" value="zaktualizuj">
+        </form>
+    </section>
+</main>
+<footer th:replace="~{fragments/Standard_footer :: footer}">
+
+</footer>
+
+</body>
+</html>

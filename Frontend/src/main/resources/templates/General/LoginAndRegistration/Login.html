@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zaloguj się</title>
+
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/Login.css}" href="/CSS/Login.css">
+
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+
+<main>
+    <form method="post" action="/login">
+        <input type="text" name="username" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}">
+        <button type="submit">Zaloguj się</button>
+    </form>
+
+    <section>
+        <h2>
+            Nie masz konta?
+        </h2>
+        <p><a  href="http://localhost:8080/register_as_client">Zarejestruj się</a></p>
+    </section>
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

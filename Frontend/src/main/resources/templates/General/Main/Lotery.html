@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/Lotery.css}" href="../../../static/CSS/General.css">
+</head>
+<body>
+
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+<main>
+
+    <div th:if="${userGuess == false}">
+        <script>
+            alert("Zła odpowiedź")
+        </script>
+        <h2>Spróbuj ponownie jutro</h2>
+    </div>
+
+    <div th:if="${userGuess == true}">
+        <script>
+            alert("Dobra odpowiedź")
+        </script>
+        <h2>Spróbuj ponownie jutro</h2>
+    </div>
+
+    <div th:if="${userGuess == null}">
+        <form method="post" action="/Lotery">
+            <label>Zgadnij piosenkę</label>
+            <input name="userGuess" type="text" placeholder="piosenka">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+            <input type="submit">
+        </form>
+    </div>
+
+
+</main>
+
+<footer th:replace="~{fragments/Standard_footer :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Załóż konto</title>
+    <link rel="stylesheet" href="/CSS/Register_as_client.css">
+
+    <script th:if="usedEmail == true">
+        alert("Mail już jest wykorzystany")
+    </script>
+</head>
+<body>
+<header th:replace="~{fragments/Standard_header :: header}">
+    <h1>Aledrogo</h1>
+</header>
+<main>
+    <form>
+        <div>
+            <input type="radio" name="accountType" value="client" id="clientRadio">
+            <label>
+                <h2>Konto Zwykłe</h2>
+                <h3>Konto dla klientów indywidualnych</h3>
+            </label>
+        </div>
+        <div>
+            <input type="radio" name="accountType" value="seller" id="sellerRadio" checked>
+            <label for="sellerRadio">
+                <h2>Konto Sprzedawca</h2>
+                <h3>Konto dla klientów biznesowych</h3>
+            </label>
+        </div>
+    </form>
+
+    <form action="/register_as_seller" method="post">
+        <input type="text" name="email" id="email" class="email" placeholder="email">
+        <input type="password" name="password" id= "password" class="password" placeholder="password">
+        <input type="text" name = "firstName" id="firstName" class="firstName" placeholder="imie">
+        <input type="text" name="lastName" id="lastName" class="lastName" placeholder="nazwisko">
+        <div>
+            <label>Mam więcej niż 18 lat</label>
+            <input type="radio" name="ifAdult" id="isAdult" class="ifAdult" value="true">
+        </div>
+        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+        <input type="submit" value="ZAŁÓŻ KONTO">
+    </form>
+    <script>
+        document.querySelector('input[value="client"]').addEventListener('change', function() {
+            if (this.checked) {
+                window.location.href = '/register_as_client';
+            }
+        });
+    </script>
+    <script>
+        const radios = document.querySelectorAll('input[type="radio"]');
+        let lastChecked = null;
+        radios.forEach(radio =>
+        { radio.addEventListener('click', function() { if (this === lastChecked)
+        { this.checked = false;
+            lastChecked = null;
+        } else
+        { lastChecked = this;
+        } });
+        });
+    </script>
+
+</main>
+<footer>
+
+</footer>
+
+
+
+</body>
+</html>

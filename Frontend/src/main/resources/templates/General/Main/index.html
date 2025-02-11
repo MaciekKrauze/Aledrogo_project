@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/CSS/General.css}" href="../../../static/CSS/General.css">
+    <link rel="stylesheet" th:href="@{/CSS/index.css}" href="../../../static/CSS/index.css">
+</head>
+<body>
+    <header>
+        <section>
+        <h1><a href="/">Aledrogo</a></h1>
+        <form method="get" action="/search" class="login-form">
+            <input type="text" name="name" placeholder="Nazwa produktu" />
+            <select name="categoryId">
+                <option value="">Wszystkie kategorie</option>
+                <option th:each="category : ${allCategories}"
+                        th:value="${category.getId()}"
+                        th:text="${category.getCategoryName()}">
+                </option>
+            </select>
+            <input type="submit" value="Wyszukaj">
+        </form>
+        </section>
+        <ul th:if="${userRole != 'ROLE_ANONYMOUS'}">
+            <li><a href="User/Delivery">status wysyłki</a></li>
+            <li><a href="../YourAledrogo">Moje aledrogo</a></li>
+            <li><a href="/Lotery">Loteria</a></li>
+            <form action="/logout" method="post">
+                <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                <input type="submit" value="wyloguj">
+            </form>
+        </ul>
+
+        <div th:if="${ifSeller == true}">
+            <ul>
+                <li><a href="/Seller/MyProducts">Moje produkty</a></li>
+                <li><a href="/Seller/Sell">Nowa sprzedaż</a></li>
+            </ul>
+        </div>
+
+        <div th:if="${userRole == 'ROLE_ANONYMOUS'}">
+            <ul>
+                <li><a href="login">Zaloguj się</a></li>
+                <li><a href="register_as_client">Zarejestruj się</a></li>
+            </ul>
+        </div >
+
+        <div th:if="${userRole == 'ROLE_ADMIN'}">
+            <ul>
+                <li><a th:href="@{/admin/adminPanel}" href="/admin/adminPanel">Admin Panel</a></li>
+
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <div>
+            <ul th:each="product : ${products}">
+                <li>
+                    <form method="post" action="/search">
+                        <div>
+                            <input type="hidden" name="productId" th:value="${product.getId()}"/>
+                            <label th:text="${product.getName()}"></label>
+                            <label th:text="${product.getPrice()}"></label>
+                            <label th:text="${product.getCategory().getCategoryName()}"></label>
+                        </div>
+                        <label> <img th:src="@{'/images/' + ${product.imageId}}" alt="Obraz produktu"></label>
+                        <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                        <input type="submit" value="Kup">
+                    </form>
+                </li>
+            </ul>
+
+            <p th:if="${products.size() == 0}">Nie ma takich produktów.</p>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/Standard_footer :: footer}">
+        <section>
+            <h2>Aledrogo</h2>
+            <ul>
+                <li><a href=/General/RandomSite>O nas</a></li>
+                <li><a href=/General/RandomSite></a></li>
+                <li><a href=/General/RandomSite></a></li>
+                <li><a href=/General/RandomSite></a></li>
+            </ul>
+        </section>
+    </footer>
+
+
+</body>
+</html>

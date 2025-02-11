@@ -1,0 +1,4 @@
+rootProject.name = 'Web-api'
+
+include 'Data'
+project(':Data').projectDir = new File(settingsDir, '../Data')

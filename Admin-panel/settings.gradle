@@ -1,0 +1,9 @@
+rootProject.name = 'Admin-panel'
+
+include 'Frontend'
+include 'Data'
+include 'Web-api'
+
+project(':Data').projectDir = new File(settingsDir, '../Data')
+project(':Frontend').projectDir = new File(settingsDir, '../Frontend')
+project(':Web-api').projectDir = new File(settingsDir, '../Web-api')

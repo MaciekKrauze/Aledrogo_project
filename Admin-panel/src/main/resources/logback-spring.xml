@@ -1,0 +1,33 @@
+<configuration>
+
+    <!-- Appender do logowania do pliku -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/error.log</file>
+        <append>true</append>
+        <encoder>
+            <!-- Format logów: data, poziom, wiadomość -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%level] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Appender do logowania na konsolę -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- Format logów na konsoli: data, poziom, wiadomość -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%level] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger, domyślnie logowanie na poziomie INFO -->
+    <root level="WARN">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <!-- Logowanie dla konkretnego pakietu na poziomie DEBUG -->
+    <logger name="com.twojprojekt" level="DEBUG">
+        <appender-ref ref="FILE" />
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+</configuration>

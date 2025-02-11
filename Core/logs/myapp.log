@@ -1,0 +1,99 @@
+2025-01-26 21:16:52 [INFO] - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-26 21:16:52 [INFO] - Starting LoginAndRegisterControllerTest using Java 23.0.1 with PID 13052 (started by Maciej in D:\Aledrogo_projekt\Aledrogo_projekt\Core)
+2025-01-26 21:16:52 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2025-01-26 21:16:53 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-26 21:16:53 [INFO] - Finished Spring Data repository scanning in 42 ms. Found 12 JPA repository interfaces.
+2025-01-26 21:16:53 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-26 21:16:53 [INFO] - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-26 21:16:53 [INFO] - HHH000026: Second-level cache disabled
+2025-01-26 21:16:54 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-26 21:16:54 [INFO] - HikariPool-1 - Starting...
+2025-01-26 21:16:54 [INFO] - AutoConfiguredOpenTelemetrySdk found on classpath but automatic configuration is disabled. To enable, run your JVM with -Dotel.java.global-autoconfigure.enabled=true
+2025-01-26 21:16:54 [INFO] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3de383f7
+2025-01-26 21:16:54 [INFO] - HikariPool-1 - Start completed.
+2025-01-26 21:16:54 [WARN] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-26 21:16:54 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-26 21:16:55 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-26 21:16:55 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 21:16:55 [INFO] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-26 21:16:56 [INFO] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-01-26 21:16:57 [INFO] - Initializing Spring TestDispatcherServlet ''
+2025-01-26 21:16:57 [INFO] - Initializing Servlet ''
+2025-01-26 21:16:57 [INFO] - Completed initialization in 1 ms
+2025-01-26 21:16:57 [INFO] - Started LoginAndRegisterControllerTest in 4.756 seconds (process running for 5.653)
+2025-01-26 21:16:58 [INFO] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 21:16:58 [INFO] - HikariPool-1 - Shutdown initiated...
+2025-01-26 21:16:58 [INFO] - HikariPool-1 - Shutdown completed.
+2025-01-26 21:26:13 [INFO] - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-26 21:26:13 [INFO] - Starting LoginAndRegisterControllerTest using Java 23.0.1 with PID 21796 (started by Maciej in D:\Aledrogo_projekt\Aledrogo_projekt\Core)
+2025-01-26 21:26:13 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2025-01-26 21:26:13 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-26 21:26:13 [INFO] - Finished Spring Data repository scanning in 45 ms. Found 12 JPA repository interfaces.
+2025-01-26 21:26:14 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-26 21:26:14 [INFO] - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-26 21:26:14 [INFO] - HHH000026: Second-level cache disabled
+2025-01-26 21:26:14 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-26 21:26:14 [INFO] - HikariPool-1 - Starting...
+2025-01-26 21:26:14 [INFO] - AutoConfiguredOpenTelemetrySdk found on classpath but automatic configuration is disabled. To enable, run your JVM with -Dotel.java.global-autoconfigure.enabled=true
+2025-01-26 21:26:14 [INFO] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3de383f7
+2025-01-26 21:26:14 [INFO] - HikariPool-1 - Start completed.
+2025-01-26 21:26:14 [WARN] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-26 21:26:14 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-26 21:26:15 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-26 21:26:15 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 21:26:16 [INFO] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-26 21:26:17 [INFO] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-01-26 21:26:17 [INFO] - Initializing Spring TestDispatcherServlet ''
+2025-01-26 21:26:17 [INFO] - Initializing Servlet ''
+2025-01-26 21:26:17 [INFO] - Completed initialization in 1 ms
+2025-01-26 21:26:17 [INFO] - Started LoginAndRegisterControllerTest in 4.665 seconds (process running for 5.514)
+2025-01-26 21:26:18 [INFO] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 21:26:18 [INFO] - HikariPool-1 - Shutdown initiated...
+2025-01-26 21:26:18 [INFO] - HikariPool-1 - Shutdown completed.
+2025-01-26 22:33:44 [INFO] - HV000001: Hibernate Validator 8.0.2.Final
+2025-01-26 22:33:45 [INFO] - Starting LoginAndRegisterControllerTest using Java 23.0.1 with PID 14616 (started by Maciej in D:\Aledrogo_projekt\Aledrogo_projekt\Core)
+2025-01-26 22:33:45 [INFO] - No active profile set, falling back to 1 default profile: "default"
+2025-01-26 22:33:45 [INFO] - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-26 22:33:45 [INFO] - Finished Spring Data repository scanning in 43 ms. Found 12 JPA repository interfaces.
+2025-01-26 22:33:46 [INFO] - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-26 22:33:46 [INFO] - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-01-26 22:33:46 [INFO] - HHH000026: Second-level cache disabled
+2025-01-26 22:33:46 [INFO] - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-26 22:33:46 [INFO] - HikariPool-1 - Starting...
+2025-01-26 22:33:46 [INFO] - AutoConfiguredOpenTelemetrySdk found on classpath but automatic configuration is disabled. To enable, run your JVM with -Dotel.java.global-autoconfigure.enabled=true
+2025-01-26 22:33:46 [INFO] - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@288b73c1
+2025-01-26 22:33:46 [INFO] - HikariPool-1 - Start completed.
+2025-01-26 22:33:46 [WARN] - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-26 22:33:46 [INFO] - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 9.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-01-26 22:33:47 [INFO] - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-26 22:33:47 [INFO] - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 22:33:48 [INFO] - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-26 22:33:48 [INFO] - Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-01-26 22:33:49 [INFO] - Initializing Spring TestDispatcherServlet ''
+2025-01-26 22:33:49 [INFO] - Initializing Servlet ''
+2025-01-26 22:33:49 [INFO] - Completed initialization in 1 ms
+2025-01-26 22:33:49 [INFO] - Started LoginAndRegisterControllerTest in 4.834 seconds (process running for 5.663)
+2025-01-26 22:33:50 [INFO] - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-26 22:33:50 [INFO] - HikariPool-1 - Shutdown initiated...
+2025-01-26 22:33:50 [INFO] - HikariPool-1 - Shutdown completed.

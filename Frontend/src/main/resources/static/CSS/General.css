@@ -1,0 +1,98 @@
+* {
+     background-color: black;
+ }
+ body {
+     display: flex;
+     flex-direction: column;
+     min-height: 100vh;
+ }
+header {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    background-color: #222222;
+}
+
+h1 a{
+    color: #ff5a00;
+    text-decoration: none;
+    background-color: #222222;
+    font-size: 2.5em;
+}
+
+header section{
+    background-color: #222222;
+}
+header li a {
+    color: white;
+    background-color: #ff5a00;
+    border: none;
+    text-decoration: none;
+    margin: 1em;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+header li {
+    background-color: #222222;
+    list-style-type: none;
+}
+
+header ul{
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+}
+header div {
+    background-color: #222222;
+}
+
+main {
+    flex: 1;
+    padding: 1em;
+}
+
+input[type=submit] {
+    color:white;
+    background-color: #ff5a00;
+    padding: 0.25em;
+    border-radius: 0.25em;
+    margin: 0.25em;
+}
+
+footer {
+    background-color: #222222;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+footer section {
+    background-color: #222222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+}
+
+footer ul {
+    background-color: #222222;
+    list-style-type: none;
+}
+
+footer li {
+    background-color: #222222;
+    padding: 0.5em;
+}
+
+footer h2 {
+    background-color: #222222;
+    color: white;
+}
+
+footer a {
+    color: white;
+    background-color: #222222;
+    text-decoration: none;
+}

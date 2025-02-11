@@ -1,0 +1,6 @@
+rootProject.name = 'demo'
+include 'Data'
+include 'Web-api'
+include 'Frontend'
+include 'Core'
+include 'Admin-panel'
